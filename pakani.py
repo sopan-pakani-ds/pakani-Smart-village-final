@@ -32,7 +32,7 @@ if "admin" not in st.session_state:
 if not st.session_state.admin:
     pwd = st.sidebar.text_input("Admin Password", type="password", placeholder="pakani123")
     if st.sidebar.button("Login", use_container_width=True):
-        if pwd == ADMIN_PASS:
+        if pwd.strip() == ADMIN_PASS.strip():
             st.session_state.admin = True
             st.sidebar.success("✅ Admin Login Success")
             st.rerun()
